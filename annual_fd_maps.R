@@ -61,6 +61,6 @@ for (sub_dir in sub_dir_list) {
   
   # Plot and save
   plot(annual_rast, main = paste0("Start of Flash Drought (DOY) for Gridcells with One Flash Drought ", year))
-  writeRaster(annual_rast, paste0(out_dir_n, "/doy_flash_droughts_", year, ".tif"), overwrite = TRUE, NAflag = -9999)
+  writeRaster(annual_rast, paste0(out_dir_doy, "/doy_flash_droughts_", year, ".tif"), overwrite = TRUE, NAflag = -9999)
   
 }
