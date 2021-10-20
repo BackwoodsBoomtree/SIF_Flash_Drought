@@ -55,17 +55,10 @@ data_means      <- function(input, fd_mask) {
   } else {
     for (i in 1:ceiling(ncol(df) / 10)) {
       last_pos <- i * 10
-      print(i)
-      print("Last Position i * 10")
-      print(last_pos)
       if (last_pos > ncol(df)) {
         last_pos <- ncol(df)
-        print(last_pos)
-        print("Last Position ncol(df_735)")
       }
       plot.ts(df[, c((i * 10 - 9):last_pos)], main = "Time Series of Data for Flash Drought Area")
-      print((i * 10 - 9):last_pos)
-      print("Last Position last")
     }
   }
   return(df)
