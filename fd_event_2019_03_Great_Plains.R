@@ -71,4 +71,20 @@ df_743  <- data_means(sif_esa_743, fd_mask)
 df_735  <- data_means(sif_esa_735, fd_mask)
 
 
+write.csv(df_743,"G:/Russell/Projects/Flash_Drought/Great_Plains_2019_03/csv/SIF_ESA_743.csv", row.names = FALSE)
+write.csv(df_735,"G:/Russell/Projects/Flash_Drought/Great_Plains_2019_03/csv/SIF_ESA_735.csv", row.names = FALSE)
 
+df_735 <- read.csv("G:/Russell/Projects/Flash_Drought/Great_Plains_2019_03/csv/SIF_ESA_735.csv")
+
+
+reg_743_NIRv <- lm(df_735$SIF_743 ~ df_735$NIRv)
+summary(reg_743_NIRv)
+plot(df_735$NIRv, df_735$SIF_743, col = "blue", main = "SIF_743 vs NIRv", abline(lm(df_735$SIF_743 ~ df_735$NIRv)), cex = 1.3, pch = 16, ylab = "SIF_743", xlab = "NIRv")
+
+reg_743_NDVI <- lm(df_735$SIF_743 ~ df_735$NDVI)
+summary(reg_743_NDVI)
+plot(df_735$NDVI, df_735$SIF_743, col = "blue", main = "SIF_743 vs NDVI", abline(lm(df_735$SIF_743 ~ df_735$NDVI)), cex = 1.3, pch = 16, ylab = "SIF_743", xlab = "NDVI")
+
+reg_743_REF_781 <- lm(df_735$SIF_743 ~ df_735$REF_781)
+summary(reg_743_REF_781)
+plot(df_735$REF_781, df_735$SIF_743, col = "blue", main = "SIF_743 vs REF_781", abline(lm(df_735$SIF_743 ~ df_735$REF_781)), cex = 1.3, pch = 16, ylab = "SIF_743", xlab = "REF_781")
